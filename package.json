@@ -1,6 +1,6 @@
 {
   "name": "excalidraw-desktop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Offline Electron desktop version of Excalidraw",
   "author": "ThomasMadappattu",
   "license": "MIT",
@@ -22,7 +22,8 @@
       "dist/**/*",
       "electron/**/*",
       "build/icon.png",
-      "package.json"
+      "package.json",
+      "!build/afterPack.js"
     ],
     "directories": {
       "output": "release"
@@ -65,7 +66,8 @@
     "portable": {
       "artifactName": "${productName}-${version}-win-${arch}-portable.${ext}"
     },
-    "publish": null
+    "publish": null,
+    "afterPack": "build/afterPack.js"
   },
   "dependencies": {
     "@excalidraw/excalidraw": "^0.18.0",

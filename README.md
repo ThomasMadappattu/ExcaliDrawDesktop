@@ -36,7 +36,13 @@ Pushing a tag like `v0.1.0` triggers `.github/workflows/release.yml`, which buil
 git tag v0.1.0 && git push origin v0.1.0
 ```
 
-Builds are unsigned (macOS users may need to right-click > Open; Windows may show SmartScreen).
+Builds are not notarized. The macOS app is ad-hoc signed, so on first launch right-click > Open. If macOS still says the app is "damaged", clear the download quarantine flag:
+
+```bash
+xattr -cr "/Applications/Excalidraw Desktop.app"
+```
+
+Windows may show a SmartScreen warning.
 
 ## Staying current with upstream
 
