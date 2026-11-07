@@ -28,9 +28,9 @@ npm install
 
 Pushing a tag like `v0.1.0` triggers `.github/workflows/release.yml`, which builds on a Windows/Linux/macOS matrix and attaches to a GitHub Release:
 
-- Windows: NSIS installer (`.exe`)
-- Linux: `.AppImage`
-- macOS: `.dmg` and `.zip`
+- Windows: NSIS installer and portable (`.exe`)
+- Linux: `.AppImage` (portable) and `.tar.gz`
+- macOS: `.dmg` and `.zip` (portable, unzip and run)
 
 ```bash
 git tag v0.1.0 && git push origin v0.1.0

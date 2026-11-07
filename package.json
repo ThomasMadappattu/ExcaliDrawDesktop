@@ -18,24 +18,52 @@
   "build": {
     "appId": "com.thomasmadappattu.excalidrawdesktop",
     "productName": "Excalidraw Desktop",
-    "files": ["dist/**/*", "electron/**/*", "package.json"],
-    "directories": { "output": "release" },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
     "fileAssociations": [
-      { "ext": "excalidraw", "name": "Excalidraw Drawing", "role": "Editor" }
+      {
+        "ext": "excalidraw",
+        "name": "Excalidraw Drawing",
+        "role": "Editor"
+      }
     ],
     "win": {
-      "target": ["nsis"],
-      "artifactName": "${productName}-${version}-win-${arch}-setup.${ext}"
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.png"
     },
     "linux": {
-      "target": ["AppImage"],
+      "target": [
+        "AppImage",
+        "tar.gz"
+      ],
       "category": "Graphics",
+      "icon": "build/icon.png",
       "artifactName": "${productName}-${version}-linux-${arch}.${ext}"
     },
     "mac": {
-      "target": ["dmg", "zip"],
+      "target": [
+        "dmg",
+        "zip"
+      ],
       "category": "public.app-category.graphics-design",
-      "artifactName": "${productName}-${version}-mac-${arch}.${ext}"
+      "artifactName": "${productName}-${version}-mac-${arch}.${ext}",
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "artifactName": "${productName}-${version}-win-${arch}-setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-win-${arch}-portable.${ext}"
     }
   },
   "dependencies": {

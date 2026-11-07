@@ -10,6 +10,7 @@ let saveAs = false;
 
 function createWindow() {
   win = new BrowserWindow({
+    icon: path.join(__dirname, "..", "build", "icon.png"),
     width: 1280,
     height: 800,
     webPreferences: {

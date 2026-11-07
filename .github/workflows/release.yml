@@ -40,6 +40,7 @@ jobs:
             release/*.AppImage
             release/*.dmg
             release/*.zip
+            release/*.tar.gz
           if-no-files-found: error
 
   publish:
