@@ -64,7 +64,8 @@
     },
     "portable": {
       "artifactName": "${productName}-${version}-win-${arch}-portable.${ext}"
-    }
+    },
+    "publish": null
   },
   "dependencies": {
     "@excalidraw/excalidraw": "^0.18.0",
