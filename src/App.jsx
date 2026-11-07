@@ -54,5 +54,17 @@ export default function App() {
     };
   }, []);
 
+  // Preload the bundled public libraries as the default library.
+  useEffect(() => {
+    if (!api || localStorage.getItem("defaultLibraryLoaded") === "1") return;
+    fetch("./default-library.json")
+      .then((r) => (r.ok ? r.json() : []))
+      .then((items) =>
+        api.updateLibrary({ libraryItems: items, merge: true, defaultStatus: "published" }),
+      )
+      .then(() => localStorage.setItem("defaultLibraryLoaded", "1"))
+      .catch((e) => console.error("Failed to load default libraries", e));
+  }, [api]);
+
   return <Excalidraw excalidrawAPI={setApi} />;
 }

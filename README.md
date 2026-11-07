@@ -4,6 +4,7 @@ An offline Electron desktop app wrapping the official [`@excalidraw/excalidraw`]
 
 - Secure Electron setup: `contextIsolation` on, `nodeIntegration` off, sandboxed renderer, preload bridge.
 - Fully offline: Excalidraw fonts are bundled locally.
+- All public [Excalidraw libraries](https://libraries.excalidraw.com) (~4,000 items) are preloaded into the library panel on first launch. They are fetched from `excalidraw/excalidraw-libraries` at build time (`npm run libraries` refreshes them).
 - Native **File > New / Open / Save / Save As** for `.excalidraw` files.
 
 ## Setup
