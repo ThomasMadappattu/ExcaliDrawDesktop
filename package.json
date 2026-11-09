@@ -71,7 +71,7 @@
     "afterPack": "build/afterPack.js"
   },
   "dependencies": {
-    "@excalidraw/excalidraw": "^0.18.0",
+    "@excalidraw/excalidraw": "^0.18.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
